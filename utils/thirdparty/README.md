@@ -20,9 +20,9 @@ If you believe an attribution is missing or incorrect, please open an issue or p
 | 4\)`APBS` | https://github.com/Electrostatics/apbs | See upstream LICENSE | External tool (downloaded and installed by configured environment setup) | Official source |
 | 5\)`DeepDrug3D` | https://github.com/pulimeng/DeepDrug3D | GPL‑3.0 | Adapted source code included | `utils/thirdparty/deepdrug3d` |
 | 6\)`3D U‑Net (PyTorch)` | https://github.com/zyl200846/3D-UNet-PyTorch-Implementation | MIT | Adapted source code included | `utils/thirdparty/unet3d_model` |
-| 7\)`FragBEST_pymol_plugin` | https://github.com/LPDI-EPFL/masif/tree/master/source/masif_pymol_plugin | Derived from MaSIF (Apache‑2.0) | Adapted plugin for visualization | Patched fork: https://github.com/yuyuan871111/FragBEST_pymol_plugin |
+| 7\)`FragBEST_pymol_plugin` | https://github.com/LPDI-EPFL/masif/tree/master/source/masif_pymol_plugin | Derived from MaSIF (Apache‑2.0) | Adapted plugin for visualization | New repository adapted from `masif_pymol_plugin`: https://github.com/yuyuan871111/FragBEST_pymol_plugin |
 
-> Note: “License” links below point to upstream license files when available. Where code is vendored into this repository, license texts should be included alongside the vendored code.
+> Note: “License” links below point to upstream license files when available. Where code is vendored into this repository, license texts are included alongside the vendored code.
 
 ## Details
 
