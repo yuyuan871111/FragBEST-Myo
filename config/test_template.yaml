@@ -1,0 +1,20 @@
+mode: test # mode: train, test
+seed: 42 # random seed
+
+# dataset
+data_path: ./dataset/PPSCM_OMB/MD1/MD1_aligned_protein/small_subset # input data path
+
+# output and testing logging
+output_dir: ./experiment/ignite_temp
+filename_prefix: testing # log filename prefix
+
+# model
+model_path: ./experiment/ignite_distributed_0/20240521-222709-train-backend-None/checkpoints/best_model_181_miou=0.8434.pt
+in_channels: 4 # number of input channels
+num_classes: 7 # number of classes for segmentation
+
+# hyperparameters
+use_amp: false # use AMP (Automatic Mixed Precision)
+debug: false
+
+

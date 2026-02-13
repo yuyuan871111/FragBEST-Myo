@@ -1,0 +1,20 @@
+# dataset
+mode: predict
+
+input_top_filepath: ./dataset/PPSCM_Apo/PPS_Apo_min_cg_p.pdb
+input_traj_filepath: ./dataset/PPSCM_Apo/MD1/PPS_Apo_MD1_aligned.xtc
+input_aux_filepath: ./utils/ppseg/myo/pocket_aux.txt
+input_p_data_folderpath: ./dataset/PPSCM_Apo/MD1/MD1_aligned_protein
+input_p_filename: PPS_MD1_aligned
+output_path: ./dataset/PPSCM_Apo/MD1/predict_w_descriptor_mixPRPPS_Model
+frames_list: null
+
+# model path
+model_path: ./utils/ppseg/myo/Kfold2_best_model_169_miou=0.7525.pt
+
+# parallel processing
+max_workers: 6
+descriptor_only: False
+
+# debug
+debug: False

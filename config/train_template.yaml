@@ -1,0 +1,41 @@
+mode: train # mode: train, test
+seed: 42 # random seed
+
+# dataset
+data_path: ./dataset/PPSCM_OMB/MD1/MD1_aligned_protein # input data path
+data_split_ratio: 0.8 # train/val split ratio
+cross_val: false # cross validation
+fold: 0 # number of folds
+batch_size: 2 # train batch size
+eval_batch_size: 4 # evaluation batch size
+accumulation_steps: 2 # parameter for gradient accumulation
+num_workers: 4 # number of subprocesses to use for data loading
+
+# output and training logging
+output_dir: ./experiment/ignite_distributed_0
+filename_prefix: training # log filename prefix
+save_every_iters: 100 # iteration checkpoint saving when training (preventing from losing training progress)
+log_every_iters: 100 # iteration logging when training
+debug: false
+
+# model
+in_channels: 4 # number of input channels
+num_classes: 7 # number of classes for segmentation
+n_saved: 2  # number of saved models
+
+# opimizer
+lr_scheduler: false # use learning rate scheduler
+lr: 0.0001 # learning rate
+
+# loss
+weights: [0.25, 1, 1, 1, 1, 1, 1] # class weights for loss function
+loss_fn: generalized_dice_focal # loss function
+
+# training hyperparameters
+max_epochs: 400 # number of maximum epochs
+train_epoch_length: null
+eval_epoch_length: null
+use_amp: true # use AMP (Automatic Mixed Precision)
+patience: 1000000000 # patience for early stopping
+
+

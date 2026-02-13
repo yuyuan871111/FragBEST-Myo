@@ -1,0 +1,13 @@
+mode: core-dataprep-by-config # name to identify your task
+
+# logger path
+logger_path: /[absolue]/[path]/[to]/[FragBEST-Myo]/dataset/examples/outputs_holo_like/core_dataprep.log # path to the logger file
+
+# dataset related parameters
+frames_list: [0,1,2,3] # list of frames to be processed (default: null, which means all frames)
+p_filename: Apo_SMD_protein # name of the processed data file
+output_p_data_folderpath: /[absolue]/[path]/[to]/[FragBEST-Myo]/dataset/examples/outputs_holo_like # path to the folder where the processed data will be saved
+output_index_path: null # path to the index file
+
+# workers
+max_workers: 4 # number of workers to use for parallel processing

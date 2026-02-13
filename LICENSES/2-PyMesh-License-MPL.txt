@@ -1,0 +1,4 @@
+The license is MPL, mentioned by the author in the file setup.py.
+source: https://github.com/PyMesh/PyMesh/blob/384ba882b7558ba6e8653ed263c419226c22bddf/setup.py#L112
+
+Please check with the author for the full text of the MPL license.

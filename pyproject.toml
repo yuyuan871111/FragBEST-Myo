@@ -1,0 +1,186 @@
+[project]
+authors = [
+    { name = "Yu-Yuan (Stuart) Yang from connectin - AFLab", email = "yu-yuan.yang@qmul.ac.uk" },
+]
+dependencies = []
+name = "FragBEST-Myo"
+requires-python = ">= 3.10,<3.11"
+version = "0.1.0"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge", "bioconda"]
+platforms = ["linux-64"]
+
+[tool.pixi.tasks]
+build = "bash build.sh"
+
+[tool.pixi.dependencies]
+python = "3.10.*"
+gmp = ">=6.3.0,<7"
+cmake = ">=4.1.2,<5"
+mpfr = ">=4.2.1,<5"
+boost-cpp = ">=1.85.0,<2"
+nose = ">=1.3.7"
+reduce = "4.14.*"
+
+[tool.pixi.pypi-dependencies]
+numpy = "==1.24.4"
+nose = ">=1.3.7"
+rdkit = "==2023.9.3"
+biopandas = ">=0.5.1"
+natsort = ">=8.4.0"
+scikit-learn = ">=1.3.2"
+h5py = ">=3.10.0"
+configparser = ">=6.0.0"
+propka = ">=3.5.1"
+pdb2pqr = "==3.6.2"
+umap-learn = ">=0.5.5"
+pytest = ">=8.3.5"
+pytest-cov = ">=4.1.0"
+pytest-xdist = ">=3.6.1"
+requests-mock = ">=1.11.0"
+seaborn = ">=0.13.2"
+pretrainedmodels = ">=0.7.4"
+timm = "==0.9.7"
+evaluate = ">=0.4.1"
+torch = ">=2.1.0"
+torchvision = ">=0.17"
+pytorch-ignite = ">=0.4.13"
+tensorboardx = ">=2.6.2.2"
+tensorboard = "==2.13.0"
+monai = ">=1.3.0"
+pymesh2 = { url = "https://github.com/yuyuan871111/PyMesh/releases/download/v0.3.1/pymesh2-0.3-cp310-cp310-linux_x86_64.whl" }
+mdanalysis = ">=2.8.0"
+omegaconf = ">=2.3.0"
+bokeh = "==3.1.0"
+ipycytoscape = ">=1.3.3"
+biopython = ">=1.84"
+openbabel-wheel = ">=3.1.1.19"
+ipykernel = ">=6.29.5"
+nglview = ">=3.1.4"
+ruff = ">=0.11.2"
+black = { extras = ["jupyter"], version = ">=25.1.0" }
+poethepoet = ">=0.33.1"
+sphinx = "==5.3"
+furo = "==2023.03.27"
+myst-nb = ">=1.2.0"
+sphinx-copybutton = ">=0.5.2"
+sphinx-autobuild = ">=2024.10.3"
+
+[tool.pixi.environments]
+pymol = { features = ["pymol"], no-default-feature = true }
+
+[tool.pixi.feature.pymol.dependencies]
+numpy = ">=2.2.6"
+pymol-open-source = "*"
+
+
+[tool.poe.tasks.format-check]
+help = "Checks that the code and notebooks don't require formatting"
+sequence = [{ cmd = "ruff format --diff" }, { cmd = "black --diff tutorial" }]
+
+[tool.poe.tasks.lint-check]
+help = "Checks if the code requires linting"
+cmd = "ruff check --preview --diff"
+
+[tool.poe.tasks.style-check]
+help = "Runs the formatting and linting checks"
+sequence = [{ ref = "format-check" }, { ref = "lint-check" }]
+
+[tool.poe.tasks.format]
+help = "Formats the code and notebooks"
+sequence = [{ cmd = "ruff format" }, { cmd = "black tutorial" }]
+
+[tool.poe.tasks.lint]
+help = "Lints the code"
+cmd = "ruff check --preview --fix"
+
+[tool.poe.tasks.style-fix]
+help = "Fixes formatting and linting issues"
+sequence = [{ ref = "format" }, { ref = "lint" }]
+
+[tool.poe.tasks.test]
+help = "Runs the tests"
+shell = """
+cd utils && pytest -n $numprocesses $files && cd ..
+"""
+[[tool.poe.tasks.test.args]]
+name = "numprocesses"
+help = "Number of processes to use for testing"
+default = "auto"
+options = ["-n", "--numprocesses"]
+[[tool.poe.tasks.test.args]]
+name = "files"
+help = "Files to test"
+default = ""
+options = ["-f", "--files"]
+
+[tool.poe.tasks.build-doc]
+help = "Builds the documentation"
+cmd = "sphinx-build -M html docs/source docs/build"
+
+[tool.poe.tasks.build-doc-dev]
+help = "Builds the documentation (development)"
+sequence = [
+    { ref = "clean-doc-cache" },
+    { cmd = "sphinx-autobuild docs/source docs/autobuild" },
+]
+
+[tool.poe.tasks.clean-doc-cache]
+help = "Cleans the cache"
+sequence = [
+    { cmd = "rm -rf docs/build" },
+    { cmd = "rm -rf docs/autobuild" },
+    { cmd = "rm -rf docs/jupyter_excute" },
+]
+
+[tool.ruff]
+# python 3.10
+target-version = "py310"
+# Exclude the following directories from ruff checks and format.
+exclude = [
+    "utils/thirdparty",
+    "archive",
+    "dataset_preparation/dataset_preparation_PPSCM_OMB/archive",
+]
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+
+[tool.ruff.lint]
+extend-select = [
+    "F",  # pyflakes
+    "E",  # pycodestyle
+    "I",  # isort
+    "UP", # pyupgrade
+    #"SIM", # simplify  
+    #"D",   # pydocstyle
+]
+ignore = [
+    "D205", # 1 blank line required before class docstring
+]
+
+
+[tool.isort]
+profile = "black"
+
+
+[tool.black]
+target-version = ["py310"]
+extend-exclude = '(utils/thirdparty|archive|dataset_preparation/dataset_preparation_PPSCM_OMB/archive|docs/source/notebooks)$'

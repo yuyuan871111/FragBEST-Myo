@@ -1,0 +1,12 @@
+[General]
+GITLFS_PATH=/home/yuyang/miniconda3/envs/py38/bin/git-lfs
+POETRY_PATH=/home/yuyang/miniconda3/envs/py38/bin/poetry
+[ThirdParty]
+APBS_BIN=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/apbs/APBS-3.4.1.Linux/bin/apbs
+MULTIVALUE_BIN=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/apbs/APBS-3.4.1.Linux/share/apbs/tools/bin/multivalue
+PDB2PQR_BIN=pdb2pqr
+REDUCE_BIN=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/reduce/reduce_src/reduce
+REDUCE_HET_DICT=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/reduce/reduce_wwPDB_het_dict.txt
+MSMS_BIN=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/msms/msms
+PDB2XYZRN=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/msms/pdb_to_xyzrn
+DLIGAND_BIN=/home/yuyang/Sarcomere/Project/ProBiSEnSe/utils/thirdparty/deepdrug3d

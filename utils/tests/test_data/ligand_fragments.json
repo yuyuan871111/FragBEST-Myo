@@ -1,0 +1,94 @@
+{
+  "0": {
+    "name": "out of the threshold"
+  },
+  "1": {
+    "name": "fragment 1",
+    "fragments_idx": [
+      0,
+      1,
+      2,
+      3,
+      30,
+      45,
+      52
+    ],
+    "fragment_vol": 55.40000000000001
+  },
+  "2": {
+    "name": "fragment 2",
+    "fragments_idx": [
+      4,
+      5,
+      6,
+      7,
+      26,
+      27,
+      29,
+      31,
+      32,
+      43,
+      44,
+      46,
+      47,
+      50
+    ],
+    "fragment_vol": 88.88800000000002
+  },
+  "3": {
+    "name": "fragment 3",
+    "fragments_idx": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      25,
+      28,
+      34,
+      35,
+      36
+    ],
+    "fragment_vol": 85.09600000000002
+  },
+  "4": {
+    "name": "fragment 4",
+    "fragments_idx": [
+      14,
+      15,
+      16,
+      17,
+      37,
+      38
+    ],
+    "fragment_vol": 50.320000000000014
+  },
+  "5": {
+    "name": "fragment 5",
+    "fragments_idx": [
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      39,
+      40,
+      41,
+      42,
+      49,
+      51
+    ],
+    "fragment_vol": 94.30400000000002
+  },
+  "6": {
+    "name": "fragment 6",
+    "fragments_idx": [
+      8,
+      33,
+      48
+    ],
+    "fragment_vol": 24.440000000000005
+  }
+}

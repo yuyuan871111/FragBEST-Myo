@@ -1,0 +1,17 @@
+mode: core-predict-by-config # name to identify your task
+
+# logger path
+logger_path: /[absolute]/[path]/[to]/[FragBEST-Myo]/dataset/examples/outputs_holo_like/core_prediction.log # path to the logger file
+
+# dataset
+frames_list: [0,1,2,3] # list of frames to be processed. If null, all frames will be processed
+input_p_data_folderpath: /[absolute]/[path]/[FragBEST-Myo]/dataset/examples/outputs_holo_like # path to the folder where the processed data is saved
+input_p_filename: Apo_SMD_protein # name of the processed data file
+
+# parameters
+model_path: /[absolute]/[path]/[FragBEST-Myo]/utils/ppseg/myo/Kfold2_best_model_169_miou=0.7525.pt # path to the model
+descriptor_only: False  # if True, only the descriptor is returned (which means you might have run the prediction in advance)
+device: "cuda" # device to run the model on (cpu or cuda)
+
+# workers
+max_workers: 4 # number of workers to use for parallel processing

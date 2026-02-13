@@ -1,0 +1,12 @@
+mode: core-genpse-by-config # name to identify your task
+
+# logger path
+logger_path: /[absolute]/[path]/[to]/[FragBEST-Myo]/dataset/examples/outputs_holo_like/core_genpse.log # path to the logger file
+
+# dataset
+frames_list: [0,1,2,3] # list of frames to be processed. If null, all frames will be processed
+input_p_data_folderpath: /[absolute]/[path]/[FragBEST-Myo]/dataset/examples/outputs_holo_like # path to the folder where the processed data is saved
+input_p_filename: Apo_SMD_protein # name of the processed data file
+
+# workers
+max_workers: 4 # number of workers to use for parallel processing
