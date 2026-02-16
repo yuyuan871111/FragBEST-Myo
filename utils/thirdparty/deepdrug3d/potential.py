@@ -75,7 +75,8 @@ def single_potEnergy(loc1, ld_type_list, mol2_in_string, protein_file):
         f = open(temp_filename, "w")
         f.write(rrr)
         f.close()
-        breakpoint()
+        raise NotImplementedError(
+            "The dligand program is not available for current implementation.")
         child = subprocess.Popen(
             [f"{dligand_bin}/dligand-linux", temp_filename, protein_file],
             stdout=subprocess.PIPE,
