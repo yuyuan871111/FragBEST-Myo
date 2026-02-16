@@ -43,29 +43,10 @@ nb_execution_mode = "off"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "furo"
-html_static_path = ["_static"]
 
 source_suffix = {
     ".rst": "restructuredtext",
     ".txt": "myst-nb",
     ".md": "myst-nb",
     ".ipynb": "myst-nb",
-}
-
-html_theme_options = {
-    "repository_url": "https://github.com/yuyuan871111/FragBEST-Myo",
-    "path_to_docs": "docs",
-    "use_source_button": True,
-    "use_download_button": True,
-    "use_repository_button": True,
-    "use_issues_button": True,
-    "launch_buttons": {"colab_url": "https://colab.research.google.com"},
-    "icon_links": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/yuyuan871111/FragBEST-Myo",
-            "icon": "fa-brands fa-square-github",
-            "type": "fontawesome",
-        },
-    ],
 }
