@@ -14,7 +14,7 @@
 
 ## Quick Start
 ### Installation
-FragBEST-Myo broadly follows the same preparation protocol as \(third-party tool 1\)[`MaSIF`](https://github.com/LPDI-EPFL/masif) to generate chemical features and surface files. As a result, several third-party libraries and programs are required, including 2\)`PyMesh`, 3\)`msms`, and 4\)`APBS`. 
+FragBEST-Myo requires multiple third-party libraries and programs. In particular, we follow the same preparation protocol as \(third-party tool 1\)[`MaSIF`](https://github.com/LPDI-EPFL/masif) to generate chemical features and surface files, meaning that we have to include 2\)`PyMesh`, 3\)`msms`, and 4\)`APBS`. 
 
 To ensure compatibility with our workflow and Python 3.10, we patched portions of 1\)`MaSIF` and 2\)`PyMesh` (see change logs: [MaSIF compare](https://github.com/LPDI-EPFL/masif/compare/master...yuyuan871111:masif:master), [PyMesh compare](https://github.com/PyMesh/PyMesh/compare/main...yuyuan871111:PyMesh:main)). We also adapt code from the below package 5\)[`DeepDrug3D`](https://github.com/pulimeng/DeepDrug3D) (GPL‑3.0) and 6\)[`3D U‑Net PyTorch implementation`](https://github.com/zyl200846/3D-UNet-PyTorch-Implementation/tree/master) (MIT). The adapted sources are included under [`utils/thirdparty`](https://github.com/fornililab/FragBEST-Myo/tree/main/utils/thirdparty).
 
